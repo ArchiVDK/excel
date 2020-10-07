@@ -1,0 +1,6 @@
+webpack
+git
+babel
+scss
+eslint
+dev/prod mode
