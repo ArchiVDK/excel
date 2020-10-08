@@ -7,7 +7,7 @@ function toCell() {
   return `<div class="cell"></div>`;
 }
 
-function createCol(col) {
+function toCol(col) {
   return `<div class="column">${col}</div>`;
 }
 
@@ -29,7 +29,7 @@ export function createTable(rowCount = 15) {
   const cols = new Array(colsCount)
       .fill('')
       .map(toChar)
-      .map(createCol)
+      .map(toCol)
       .join('');
 
   rows.push(createRow(null, cols));
