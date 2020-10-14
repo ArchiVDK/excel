@@ -5,13 +5,15 @@ export default class ExcelComponent extends DOMListener {
     super($root, options.listeners);
     this.name = options.listeners || '';
     this.emitter = options.emitter;
+    this.store = options.store;
+    this.subscribe = options.subscribe || [];
     this.unsubscribers = [];
     this.prepare();
   }
 
   prepare() {}
 
-  // Возвращет шаблон компонетан
+  // Возвращет шаблон компонента
   toHTML() {
     return '';
   }
@@ -25,9 +27,19 @@ export default class ExcelComponent extends DOMListener {
     this.unsubscribers.push(unsub);
   }
 
+  $dispatch(action) {
+    this.store.dispatch(action);
+  }
+
   init() {
     this.initDomListener();
   }
+
+  isWatching(key) {
+    return this.subscribe.includes(key);
+  }
+
+  storeChanged() {}
 
   destroy() {
     this.removeDomListener();
