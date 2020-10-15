@@ -78,8 +78,6 @@ function widthFrom(state) {
 }
 
 export function createTable(rowCount = 15, state = {}) {
-  console.log(state);
-
   const colsCount = CODES.Z - CODES.A + 1;
   const rows = [];
 
