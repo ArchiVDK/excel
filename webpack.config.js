@@ -32,7 +32,7 @@ module.exports = {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
   },
-  devtool: isDev ? 'sourse-map' : false,
+  devtool: isDev ? 'source-map' : false,
   devServer: {
     port: 3000,
     hot: isDev,
